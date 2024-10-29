@@ -1,5 +1,4 @@
 local CoreGui = game:GetService("CoreGui")
-
 if not CoreGui:FindFirstChild("TestingDFG") then
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "TestingDFG"
@@ -191,7 +190,7 @@ Activation.MouseButton1Click:Connect(function()
 				game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(play))
 			end
 		end)
-		wait(0.15)
+		wait(0.35)
 	end
 end)
 elseif CoreGui:FindFirstChild("TestingDFG") then
@@ -386,7 +385,7 @@ Activation.MouseButton1Click:Connect(function()
 				game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(play))
 			end
 		end)
-		wait(0.15)
+		wait(0.35)
 	end
 end)
 end
