@@ -1,0 +1,119 @@
+local CoreGui = game.Players.LocalPlayer.PlayerGui
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "TestingDFG"
+ScreenGui.Parent = CoreGui
+local Activation = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+Activation.Parent = ScreenGui
+
+UICorner.Parent = Activation
+UICorner.CornerRadius = UDim.new(0, 12)
+
+Activation.Name = "Pianino"
+Activation.Text = "OFF"
+Activation.Position = UDim2.new(0.007, 0, 0.209, 0)
+Activation.Size = UDim2.new(0, 60, 0, 60)
+Activation.BackgroundColor3 = Color3.fromRGB(0,0,0)
+Activation.BackgroundTransparency = 0.75
+Activation.TextColor3 = Color3.fromRGB(255,0,0)
+Activation.Font = Enum.Font.Ubuntu
+Activation.TextScaled = true
+Activation.Visible = true
+Activation.Draggable = true
+
+local toggle = false
+
+Activation.MouseButton1Click:Connect(function()
+	if toggle == false then
+		toggle = true
+		Activation.Text = "ON"
+		Activation.TextColor3 = Color3.fromRGB(0,255,0)
+	elseif toggle == true then
+		toggle = false
+		Activation.Text = "OFF"
+		Activation.TextColor3 = Color3.fromRGB(255,0,0)
+	end
+	
+	--[Buttons Actions Play]
+	local P1 = {
+		[1] = workspace.VipTimXavierSpawnedInToys:FindFirstChild("MusicKeyboard").Key1E,
+		[2] = workspace.VipTimXavierSpawnedInToys:FindFirstChild("MusicKeyboard").Key1E.CFrame
+	}
+	local P2 = {
+		[1] = workspace.VipTimXavierSpawnedInToys:FindFirstChild("MusicKeyboard").Key1F,
+		[2] = workspace.VipTimXavierSpawnedInToys:FindFirstChild("MusicKeyboard").Key1F.CFrame
+	}
+	local P3 = {
+		[1] = workspace.VipTimXavierSpawnedInToys:FindFirstChild("MusicKeyboard").Key1G,
+		[2] = workspace.VipTimXavierSpawnedInToys:FindFirstChild("MusicKeyboard").Key1G.CFrame
+	}
+	local P4 = {
+		[1] = workspace.VipTimXavierSpawnedInToys:FindFirstChild("MusicKeyboard").Key2A,
+		[2] = workspace.VipTimXavierSpawnedInToys:FindFirstChild("MusicKeyboard").Key2A.CFrame
+	}
+	local P5 = {
+		[1] = workspace.VipTimXavierSpawnedInToys:FindFirstChild("MusicKeyboard").Key2B,
+		[2] = workspace.VipTimXavierSpawnedInToys:FindFirstChild("MusicKeyboard").Key2B.CFrame
+	}
+	local P6 = {
+		[1] = workspace.VipTimXavierSpawnedInToys:FindFirstChild("MusicKeyboard").Key2C,
+		[2] = workspace.VipTimXavierSpawnedInToys:FindFirstChild("MusicKeyboard").Key2C.CFrame
+	}
+	local P7 = {
+		[1] = workspace.VipTimXavierSpawnedInToys:FindFirstChild("MusicKeyboard").Key2D,
+		[2] = workspace.VipTimXavierSpawnedInToys:FindFirstChild("MusicKeyboard").Key2D.CFrame
+	}
+	--[End]
+	while toggle == true do
+		pcall(function()
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P6))
+			wait(1.2)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P5))
+			wait(1.2)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P4))
+			wait(1.2)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P1))
+			wait(1.2)
+			for i = 1, 4 do
+				game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P1))
+				wait(0.2)
+			end
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P3))
+			wait(1.2)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P4))
+			wait(1.2)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P2))
+			wait(1.2)
+			for i = 1, 4 do
+				game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P2))
+				wait(0.2)
+			end
+			for i = 1, 4 do
+				game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P4))
+				wait(0.2)
+			end
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P5))
+			wait(1.2)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P6))
+			wait(1.2)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P3))
+			wait(1.2)
+			for i = 1, 4 do
+				game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P3))
+				wait(0.2)
+			end
+			for i = 1, 4 do
+				game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P6))
+				wait(0.2)
+			end
+			for i = 1, 2 do
+				game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P7))
+				wait(0.2)
+			end
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P3))
+			wait(1.2)
+		end)
+		wait(0.3)
+	end
+end)
+
