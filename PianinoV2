@@ -70,7 +70,7 @@ Activation.MouseButton1Click:Connect(function()
 	while toggle == true do
 		pcall(function()
 			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P6))
-			wait(0.5)
+			wait(0.4)
 			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P5))
 			wait(0.4)
 			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P4))
@@ -79,7 +79,7 @@ Activation.MouseButton1Click:Connect(function()
 			wait(0.2)
 			for i = 1, 4 do
 				game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P1))
-				wait(0.1)
+				wait(0.15)
 			end
 			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P3))
 			wait(0.2)
@@ -89,11 +89,11 @@ Activation.MouseButton1Click:Connect(function()
 			wait(0.2)
 			for i = 1, 3 do
 				game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P2))
-				wait(0.1)
+				wait(0.15)
 			end
 			for i = 1, 3 do
 				game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P4))
-				wait(0.1)
+				wait(0.15)
 			end
 			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P5))
 			wait(0.3)
@@ -103,11 +103,11 @@ Activation.MouseButton1Click:Connect(function()
 			wait(0.3)
 			for i = 1, 4 do
 				game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P3))
-				wait(0.1)
+				wait(0.15)
 			end
 			for i = 1, 4 do
 				game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P6))
-				wait(0.1)
+				wait(0.15)
 			end
 			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P7))
 			wait(0.1)
