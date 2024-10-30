@@ -139,61 +139,71 @@ Activation.MouseButton1Click:Connect(function()
 	--[End]
 
 
-	--[Plan] = 6541 1111 342 2222 4444 563 3333 6666 77 3
+	--[Plan] = 11 12 13 14 15 [Right] 1 2 3 4 5 [Left] KeyPlay = 11.. 15.. 14. 13.. 14.. 11. [2 4 6]... 11.. 13.. 15.. 15. [4 6 8].. 11.. 13.. 15.. 14. [1 3 5].. 14. 13. 12. 12.. [1 H3 5.. 11..] 11.. 15.. 14. 13.. 14.. 11. [2 4 6]...
+	
 	while toggle == true do
 		pcall(function()
 			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P11))
-			wait(0.4)
-			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P10))
-			wait(0.4)
-			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P9))
+			wait(0.5)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P15))
+			wait(0.5)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P14))
 			wait(0.3)
-			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P6))
-			wait(0.2)
-			for i = 1, 4 do
-				game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P6))
-				wait(0.175)
-			end
-			wait(0.1)
-			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P8))
-			wait(0.2)
-			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P9))
-			wait(0.2)
-			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P7))
-			wait(0.2)
-			for i = 1, 3 do
-				game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P7))
-				wait(0.175)
-			end
-			wait(0.1)
-			for i = 1, 3 do
-				game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P9))
-				wait(0.175)
-			end
-			wait(0.1)
-			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P10))
-			wait(0.3)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P13))
+			wait(0.5)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P14))
+			wait(0.5)
 			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P11))
 			wait(0.3)
-			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P8))
+			
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P2))
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P4))
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P6))
+			wait(1)
+			
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P11))
+			wait(0.5)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P13))
+			wait(0.5)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P15))
+			wait(0.5)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P15))
 			wait(0.3)
-			for i = 1, 4 do
-				game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P8))
-				wait(0.175)
-			end
-			wait(0.1)
-			for i = 1, 4 do
-				game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P11))
-				wait(0.175)
-			end
-			wait(0.1)
-			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P12))
-			wait(0.175)
-			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P12))
-			wait(0.175)
-			wait(0.1)
+
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P4))
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P6))
 			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P8))
-			wait(0.2)
+			wait(1)
+			
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P11))
+			wait(0.5)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P13))
+			wait(0.5)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P15))
+			wait(0.5)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P14))
+			wait(0.3)
+			
+
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P1))
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P3))
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P5))
+			wait(1)
+			
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P14))
+			wait(0.3)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P13))
+			wait(0.3)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P12))
+			wait(0.3)
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P12))
+			wait(0.5)
+			
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P1))
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(H3))
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P5))
+			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P11))
+			wait(1)
 		end)
 		wait(0.5)
 	end
