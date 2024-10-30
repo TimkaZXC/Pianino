@@ -116,7 +116,7 @@ Activation.MouseButton1Click:Connect(function()
 			game:GetService("ReplicatedStorage").GrabEvents.SetNetworkOwner:FireServer(unpack(P3))
 			wait(0.2)
 		end)
-		wait(0.3)
+		wait(0.5)
 	end
 end)
 
