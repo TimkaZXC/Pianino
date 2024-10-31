@@ -47,7 +47,7 @@ end)
 	ImageB.Parent = Buttons
 	ImageB.Position = UDim2.new(0,0,0,0)
 	ImageB.Size = UDim2.new(0, 35, 0, 35)
-	ImageB.ImageColor3 = Color3.new(0,0,0)
+	ImageB.ImageColor3 = Color3.new(1, 1, 1)
 	ImageB.Name = "Image"
 	ImageB.BackgroundTransparency = 0.85
 	local NameB = Instance.new("TextLabel")
