@@ -1,6 +1,6 @@
 -- Meme Tower Defense Hack
 
-local CoreGui = game:GetService("Players").LocalPlayer.PlayerGui
+local CoreGui = game:GetService("CoreGui")
 local Player = game:GetService("Players").LocalPlayer
 local Mouse = Player:GetMouse()
 
@@ -54,6 +54,7 @@ local Mouse = Player:GetMouse()
 
 if not CoreGui:FindFirstChild("DefenseHackTower") then
 	local MenuGui = Instance.new("ScreenGui")
+	MenuGui.Name = "DefenseHackTower"
 	MenuGui.ResetOnSpawn = false
 	MenuGui.DisplayOrder = 99999999
 	MenuGui.Parent = CoreGui
@@ -109,6 +110,18 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 	Selected.Name = "Selected"
 	Selected.Parent = MenuGui
 	
+	Toggle.MouseButton1Click:Connect(function()
+		if BackGround.Visible == false then
+			BackGround.Visible = true
+			Toggle.ImageColor3 = Color3.fromRGB(0, 255, 0)
+			s3.Color = Toggle.ImageColor3
+		elseif BackGround.Visible == true then
+			BackGround.Visible = false
+			Toggle.ImageColor3 = Color3.fromRGB(255, 0,0)
+			s3.Color = Toggle.ImageColor3
+		end
+	end)
+	
 	for _, Towers in pairs(game.ReplicatedStorage.Storage.Assets.Troops:GetChildren()) do
 		if Towers:IsA("Model") then
 			local Tower = Buttons:Clone()
@@ -141,17 +154,6 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 		end)
 	end)
 	
-	Toggle.MouseButton1Click:Connect(function()
-		if BackGround.Visible == false then
-			BackGround.Visible = true
-			Toggle.ImageColor3 = Color3.fromRGB(0, 255, 0)
-			s3.Color = Toggle.ImageColor3
-		elseif BackGround.Visible == true then
-			BackGround.Visible = false
-			Toggle.ImageColor3 = Color3.fromRGB(255, 0,0)
-			s3.Color = Toggle.ImageColor3
-		end
-	end)
 elseif CoreGui:FindFirstChild("DefenseHackTower") then
 	CoreGui:FindFirstChild("DefenseHackTower"):Destroy()
 end
