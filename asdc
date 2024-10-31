@@ -183,7 +183,7 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 		end)
 	end)
 	
-	for _, Towers in pairs(game.ReplicatedStorage.Towers:GetDescendants()) do
+	for _, Towers in pairs(game.ReplicatedStorage.Towers:GetChildren()) do
 		
 			pcall(function()
 			if Towers:IsA("Model") then
