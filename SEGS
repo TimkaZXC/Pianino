@@ -119,13 +119,31 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 	Toggle.Draggable = true
 	Toggle.Active = true
 	Toggle.Position = UDim2.new(0.058, 0, 0.177, 0)
-	Toggle.Size = UDim2.new(0.04, 0, 0.06, 0)
+	Toggle.Size = UDim2.new(0.06, 0, 0.06, 0)
 	Toggle.BackgroundTransparency = 0.75
 	Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	Toggle.Image = "rbxassetid://130160585574912"
 	Toggle.ScaleType = Enum.ScaleType.Crop
 	Toggle.ImageColor3 = Color3.fromRGB(255, 0,0)
 	s3.Color = Toggle.ImageColor3
+	
+	local Spawns = Instance.new("ImageButton")
+	local c4 = UICorner:Clone()
+	local s4 = UIStroke:Clone()
+	c4.Parent = Toggle
+	s4.Parent = Toggle
+	Spawns.Parent = MenuGui
+	Spawns.Draggable = true
+	Spawns.Active = true
+	Spawns.Position = UDim2.new(0.151, 0, 0.151, 0)
+	Spawns.Size = UDim2.new(0.10, 0, 0.10, 0)
+	Spawns.BackgroundTransparency = 0.75
+	Spawns.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	Spawns.Image = "rbxassetid://131843948312186"
+	Spawns.ScaleType = Enum.ScaleType.Crop
+	Spawns.ImageColor3 = Color3.fromRGB(0, 255,0)
+	s4.Color = Spawns.ImageColor3
+	
 	local Selected = Instance.new("StringValue")
 	Selected.Name = "Selected"
 	Selected.Parent = MenuGui
@@ -139,6 +157,30 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 			BackGround.Visible = false
 			Toggle.ImageColor3 = Color3.fromRGB(255, 0,0)
 			s3.Color = Toggle.ImageColor3
+		end
+	end)
+	
+	local tg = false
+	
+	Spawns.MouseButton1Click:Connect(function()
+		if tg == false then
+			tg = true
+			Spawns.ImageColor3 = Color3.fromRGB(255, 0, 0)
+			s4.Color = Spawns.ImageColor3
+			
+			local place = {
+				[1] = "PlaceTroop",
+				[2] = {
+					["Rotation"] = 0,
+					["RayData"] = Ray.new(game.Workspace:FindFirstChild("CLSFAWDEF").Position),
+					["Name"] = Selected.Value
+				}
+			}
+			
+			wait(0.5)
+			Spawns.ImageColor3 = Color3.fromRGB(0, 255, 0)
+			s4.Color = Spawns.ImageColor3
+			tg = false
 		end
 	end)
 	
