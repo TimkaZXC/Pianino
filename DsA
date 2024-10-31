@@ -148,6 +148,8 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 	Selected.Name = "Selected"
 	Selected.Parent = MenuGui
 	
+	local tgS = false
+	
 	Toggle.MouseButton1Click:Connect(function()
 		if BackGround.Visible == false then
 			BackGround.Visible = true
@@ -160,43 +162,39 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 		end
 	end)
 	
-	local tg = false
-	
 	Spawns.MouseButton1Click:Connect(function()
-		pcall(function()
-			if tg == false then
-			tg = true
-			Spawns.ImageColor3 = Color3.fromRGB(255, 0, 0)
-			s4.Color = Spawns.ImageColor3
-			
-			local place = {
-				[1] = Selected.Value,
-				[2] = game.Workspace:FindFirstChild("CLSFAWDEF").CFrame,
-			}
-			game:GetService("ReplicatedStorage").Functions.SpawnTower:InvokeServer(unpack(place))
-			
-			wait(0.5)
+		if tgS == false then
+			tgS = true
 			Spawns.ImageColor3 = Color3.fromRGB(0, 255, 0)
 			s4.Color = Spawns.ImageColor3
-			tg = false
+			
+			if Selected.Value == "" then
+				warn("Change Tower")
+			else
+				local Place = {
+					[1] = Selected.Value,
+					[2] = game.Workspace:FindFirstChild("CLSFAWDEF").CFrame,
+				}
+				game:GetService("ReplicatedStorage").Functions.SpawnTower:InvokeServer(unpack(Place))
 			end
-		end)
+			
+			wait(0.5)
+			tgS = false
+			Spawns.ImageColor3 = Color3.fromRGB(255, 0,0)
+			s4.Color = Spawns.ImageColor3
+		end
 	end)
 	
-	for _, Towers in pairs(game.ReplicatedStorage.Towers:GetChildren()) do
-		
-			pcall(function()
-			if Towers:IsA("Model") then
+	for _, TowerP in pairs(game:GetService("ReplicatedStorage").Towers:GetChildren()) do
+		if TowerP:IsA("Model") then
 			local Tower = Buttons:Clone()
-			Tower.Parent = ListTowers
-			Tower.Name = Towers.Name
-			Tower.NameTower.Text = Towers.Name
-			Tower.Image.Image = Towers.Icon.Image
-				Tower.MouseButton1Click:Connect(function()
-					Selected.Value = Tower.NameTower.Text
-				end)
-			end
+			Tower.NameTower.Text = TowerP.Name
+			Tower.Name = TowerP.Name
+			Tower.MouseButton1Click:Connect(function()
+				Selected.Value = Tower.Name
 			end)
+		end
+		
 	end
 	
 elseif CoreGui:FindFirstChild("DefenseHackTower") then
