@@ -1,8 +1,28 @@
 -- Meme Tower Defense Hack
 
-local CoreGui = game:GetService("CoreGui")
+local CoreGui = game:GetService("Players").LocalPlayer.PlayerGui
 local Player = game:GetService("Players").LocalPlayer
 local Mouse = Player:GetMouse()
+
+Mouse.Button1Down:Connect(function()
+	pcall(function()
+		if not game.Workspace:FindFirstChild("CLSFAWDEF") then
+			local CLSFAWDEF = Instance.new("Part")
+			CLSFAWDEF.Name = "CLSFAWDEF"
+			CLSFAWDEF.Parent = game.Workspace
+			CLSFAWDEF.Size = Vector3.new(2, 2, 2)
+			CLSFAWDEF.Anchored = true
+			CLSFAWDEF.CanCollide = false
+			CLSFAWDEF.CanQuery = false
+			CLSFAWDEF.Color = Color3.fromRGB(255, 0, 0)
+			CLSFAWDEF.Material = Enum.Material.ForceField
+			CLSFAWDEF.CFrame = CFrame.new(Mouse.Hit.X, Mouse.Hit.Y, Mouse.Hit.Z) * CFrame.new(0, 1, 0)
+		elseif game.Workspace:FindFirstChild("CLSFAWDEF") then
+			local CLSFAWDEF = game.Workspace:FindFirstChild("CLSFAWDEF")
+			CLSFAWDEF.CFrame = CFrame.new(Mouse.Hit.X, Mouse.Hit.Y, Mouse.Hit.Z) * CFrame.new(0, 1, 0)
+		end
+	end)
+end)
 
 --[Setting]
 	local UICorner = Instance.new("UICorner")
@@ -134,29 +154,6 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 		end
 	end
 	
-	Mouse.Button1Down:Connect(function()
-		pcall(function()
-			if not game.Workspace:FindFirstChild("CLSFAWDEF") then
-				local CLSFAWDEF = Instance.new("Part")
-				CLSFAWDEF.Name = "CLSFAWDEF"
-				CLSFAWDEF.Parent = game.Workspace
-				CLSFAWDEF.Size = Vector3.new(2, 2, 2)
-				CLSFAWDEF.Anchored = true
-				CLSFAWDEF.CanCollide = false
-				CLSFAWDEF.CanQuery = false
-				CLSFAWDEF.Color = Color3.fromRGB(255, 0, 0)
-				CLSFAWDEF.Material = Enum.Material.ForceField
-				CLSFAWDEF.CFrame = CFrame.new(Mouse.Hit.X, Mouse.Hit.Y, Mouse.Hit.Z) * CFrame.new(0, 1, 0)
-			elseif game.Workspace:FindFirstChild("CLSFAWDEF") then
-				local CLSFAWDEF = game.Workspace:FindFirstChild("CLSFAWDEF")
-				CLSFAWDEF.CFrame = CFrame.new(Mouse.Hit.X, Mouse.Hit.Y, Mouse.Hit.Z) * CFrame.new(0, 1, 0)
-			end
-		end)
-	end)
-	
 elseif CoreGui:FindFirstChild("DefenseHackTower") then
 	CoreGui:FindFirstChild("DefenseHackTower"):Destroy()
 end
-
-
-
