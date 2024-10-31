@@ -191,10 +191,11 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 			Tower.Name = Towers.Name
 			Tower.NameTower.Text = Towers.Name
 			Tower.Image.Image = Towers.Icon.Image
+				Tower.MouseButton1Click:Connect(function()
+					Selected.Value = Tower.NameTower.Text
+				end)
 			end)
-			Tower.MouseButton1Click:Connect(function()
-				Selected.Value = Tower.NameTower.Text
-			end)
+			
 		end
 	end
 	
