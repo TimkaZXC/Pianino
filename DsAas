@@ -53,8 +53,9 @@ end)
 	local NameB = Instance.new("TextLabel")
 	NameB.Parent = Buttons
 	NameB.Name = "NameTower"
+	NameB.Text = ""
 	NameB.Position = UDim2.new(0.292, 0, 0, 0)
-	NameB.Size = UDim2.new(0, 85, 0, 20)
+	NameB.Size = UDim2.new(0.708, 0, 0.571, 0)
 	NameB.TextColor3 = Color3.fromRGB(255, 255, 255)
 	NameB.BackgroundTransparency = 1
 	NameB.Font = Enum.Font.PatrickHand
@@ -62,8 +63,11 @@ end)
 	NameB.RichText = true
 	NameB.TextXAlignment = Enum.TextXAlignment.Left
 	local PriceB = Instance.new("TextLabel")
-	PriceB.Position = UDim2.new(0.292, 0, 0, 0)
-	PriceB.Size = UDim2.new(0, 85, 0, 20)
+	PriceB.Name = "PriceB"
+	PriceB.Text = ""
+	PriceB.Parent = Buttons
+	PriceB.Position = UDim2.new(0.292, 0, 0.571, 0)
+	PriceB.Size = UDim2.new(0.292, 0, 0.429, 0)
 	PriceB.TextColor3 = Color3.fromRGB(255, 255, 255)
 	PriceB.BackgroundTransparency = 1
 	PriceB.Font = Enum.Font.PatrickHand
@@ -189,6 +193,8 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 		if TowerP:IsA("Model") then
 			local Tower = Buttons:Clone()
 			Tower.NameTower.Text = TowerP.Name
+			Tower.Image.Image = TowerP:FindFirstChild("Config").Image.Image
+			Tower.PriceB.Text = TowerP:FindFirstChild("Config").Price.Value
 			Tower.Name = TowerP.Name
 			Tower.Parent = ListTowers
 			Tower.MouseButton1Click:Connect(function()
