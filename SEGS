@@ -172,7 +172,7 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 				[1] = "PlaceTroop",
 				[2] = {
 					["Rotation"] = 0,
-					["RayData"] = Ray.new(game.Workspace:FindFirstChild("CLSFAWDEF").Position),
+					["RayData"] = Ray.new(game.Workspace:FindFirstChild("CLSFAWDEF").Position, Vector3.new(0,0,0)),
 					["Name"] = Selected.Value
 				}
 			}
