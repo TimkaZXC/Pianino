@@ -170,7 +170,7 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 			s4.Color = Spawns.ImageColor3
 			
 			local place = {
-				[1] = ""..Selected.Value,
+				[1] = Selected.Value,
 				[2] = game.Workspace:FindFirstChild("CLSFAWDEF").CFrame,
 			}
 			game:GetService("ReplicatedStorage").Functions.SpawnTower:InvokeServer(unpack(place))
@@ -193,7 +193,7 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 			Tower.NameTower.Text = Towers.Name
 			Tower.Image.Image = Towers.Icon.Image
 				Tower.MouseButton1Click:Connect(function()
-					Selected.Value = Tower.Name
+					Selected.Value = Tower.NameTower.Text
 				end)
 			end
 			end)
