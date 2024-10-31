@@ -194,16 +194,18 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 			local Tower = Buttons:Clone()
 			if not TowerP:FindFirstChild("Config").Damage then
 				Tower.NameTower.Text = TowerP.Name
+				Tower.NameTower.TextColor3 = Color3.fromRGB(255, 255, 255)
 				Tower.Image.Image = TowerP:FindFirstChild("Config").Image.Texture
 				Tower.PriceB.Text = TowerP:FindFirstChild("Config").Price.Value
-				NameB.TextColor3 = Color3.fromRGB(0, 255, 0)
+				Tower.PriceB.TextColor3 = Color3.fromRGB(255, 255, 255)
 				Tower.Name = TowerP.Name
 				Tower.Parent = ListTowers
 			else
 				Tower.NameTower.Text = TowerP.Name
+				Tower.NameTower.TextColor3 = Color3.fromRGB(0, 255, 0)
 				Tower.Image.Image = TowerP:FindFirstChild("Config").Image.Texture
 				Tower.PriceB.Text = TowerP:FindFirstChild("Config").Price.Value
-				NameB.TextColor3 = Color3.fromRGB(255, 255, 255)
+				Tower.PriceB.TextColor3 = Color3.fromRGB(0, 255, 0)
 				Tower.Name = TowerP.Name
 				Tower.Parent = ListTowers
 			end
