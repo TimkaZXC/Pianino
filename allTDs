@@ -25,55 +25,55 @@ Mouse.Button1Down:Connect(function()
 end)
 
 --[Setting]
-	local UICorner = Instance.new("UICorner")
-	local UIStroke = Instance.new("UIStroke")
-	UIStroke.Enabled = true
-	UIStroke.Color = Color3.fromRGB(255,255,255)
-	UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-	UICorner.CornerRadius = UDim.new(0, 8)
-	
-	local Buttons = Instance.new("TextButton")
-	local c1 = UICorner:Clone()
-	local s1 = UICorner:Clone()
-	c1.Parent = Buttons
-	s1.Parent = Buttons
-	Buttons.BackgroundColor3 = Color3.new(0, 0, 0)
-	Buttons.Text = ""
-	Buttons.Size = UDim2.new(0, 120, 0, 35)
-	Buttons.BackgroundTransparency = 0.85
-	local ImageB = Instance.new("ImageLabel")
-	local c1 = UICorner:Clone()
-	c1.Parent = ImageB
-	ImageB.Parent = Buttons
-	ImageB.Position = UDim2.new(0,0,0,0)
-	ImageB.Size = UDim2.new(0, 35, 0, 35)
-	ImageB.ImageColor3 = Color3.new(0,0,0)
-	ImageB.Name = "Image"
-	ImageB.BackgroundTransparency = 0.85
-	local NameB = Instance.new("TextLabel")
-	NameB.Parent = Buttons
-	NameB.Name = "NameTower"
-	NameB.Text = ""
-	NameB.Position = UDim2.new(0.292, 0, 0, 0)
-	NameB.Size = UDim2.new(0.708, 0, 0.571, 0)
-	NameB.TextColor3 = Color3.fromRGB(255, 255, 255)
-	NameB.BackgroundTransparency = 1
-	NameB.Font = Enum.Font.PatrickHand
-	NameB.TextScaled = true
-	NameB.RichText = true
-	NameB.TextXAlignment = Enum.TextXAlignment.Left
-	local PriceB = Instance.new("TextLabel")
-	PriceB.Name = "PriceB"
-	PriceB.Text = ""
-	PriceB.Parent = Buttons
-	PriceB.Position = UDim2.new(0.292, 0, 0.571, 0)
-	PriceB.Size = UDim2.new(0.292, 0, 0.429, 0)
-	PriceB.TextColor3 = Color3.fromRGB(255, 255, 255)
-	PriceB.BackgroundTransparency = 1
-	PriceB.Font = Enum.Font.PatrickHand
-	PriceB.TextScaled = true
-	PriceB.RichText = true
-	PriceB.TextXAlignment = Enum.TextXAlignment.Left
+local UICorner = Instance.new("UICorner")
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Enabled = true
+UIStroke.Color = Color3.fromRGB(255,255,255)
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UICorner.CornerRadius = UDim.new(0, 8)
+
+local Buttons = Instance.new("TextButton")
+local c1 = UICorner:Clone()
+local s1 = UICorner:Clone()
+c1.Parent = Buttons
+s1.Parent = Buttons
+Buttons.BackgroundColor3 = Color3.new(0, 0, 0)
+Buttons.Text = ""
+Buttons.Size = UDim2.new(0, 120, 0, 35)
+Buttons.BackgroundTransparency = 0.85
+local ImageB = Instance.new("ImageLabel")
+local c1 = UICorner:Clone()
+c1.Parent = ImageB
+ImageB.Parent = Buttons
+ImageB.Position = UDim2.new(0,0,0,0)
+ImageB.Size = UDim2.new(0, 35, 0, 35)
+ImageB.ImageColor3 = Color3.new(0,0,0)
+ImageB.Name = "Image"
+ImageB.BackgroundTransparency = 0.85
+local NameB = Instance.new("TextLabel")
+NameB.Parent = Buttons
+NameB.Name = "NameTower"
+NameB.Text = ""
+NameB.Position = UDim2.new(0.292, 0, 0, 0)
+NameB.Size = UDim2.new(0.708, 0, 0.571, 0)
+NameB.TextColor3 = Color3.fromRGB(255, 255, 255)
+NameB.BackgroundTransparency = 1
+NameB.Font = Enum.Font.PatrickHand
+NameB.TextScaled = true
+NameB.RichText = true
+NameB.TextXAlignment = Enum.TextXAlignment.Left
+local PriceB = Instance.new("TextLabel")
+PriceB.Name = "PriceB"
+PriceB.Text = ""
+PriceB.Parent = Buttons
+PriceB.Position = UDim2.new(0.292, 0, 0.571, 0)
+PriceB.Size = UDim2.new(0.292, 0, 0.429, 0)
+PriceB.TextColor3 = Color3.fromRGB(255, 255, 255)
+PriceB.BackgroundTransparency = 1
+PriceB.Font = Enum.Font.PatrickHand
+PriceB.TextScaled = true
+PriceB.RichText = true
+PriceB.TextXAlignment = Enum.TextXAlignment.Left
 
 if not CoreGui:FindFirstChild("DefenseHackTower") then
 	local MenuGui = Instance.new("ScreenGui")
@@ -113,7 +113,7 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 	list.Parent = ListTowers
 	list.Padding = UDim.new(0, 7)
 	list.HorizontalAlignment = Enum.HorizontalAlignment.Center
-	
+
 	local Toggle = Instance.new("ImageButton")
 	local c3 = UICorner:Clone()
 	local s3 = UIStroke:Clone()
@@ -130,7 +130,7 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 	Toggle.ScaleType = Enum.ScaleType.Crop
 	Toggle.ImageColor3 = Color3.fromRGB(255, 0,0)
 	s3.Color = Toggle.ImageColor3
-	
+
 	local Spawns = Instance.new("ImageButton")
 	local c4 = UICorner:Clone()
 	local s4 = UIStroke:Clone()
@@ -147,13 +147,13 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 	Spawns.ScaleType = Enum.ScaleType.Crop
 	Spawns.ImageColor3 = Color3.fromRGB(0, 255,0)
 	s4.Color = Spawns.ImageColor3
-	
+
 	local Selected = Instance.new("StringValue")
 	Selected.Name = "Selected"
 	Selected.Parent = MenuGui
-	
+
 	local tgS = false
-	
+
 	Toggle.MouseButton1Click:Connect(function()
 		if BackGround.Visible == false then
 			BackGround.Visible = true
@@ -165,13 +165,13 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 			s3.Color = Toggle.ImageColor3
 		end
 	end)
-	
+
 	Spawns.MouseButton1Click:Connect(function()
 		if tgS == false then
 			tgS = true
 			Spawns.ImageColor3 = Color3.fromRGB(0, 255, 0)
 			s4.Color = Spawns.ImageColor3
-			
+
 			if Selected.Value == "" then
 				warn("Change Tower")
 			else
@@ -181,29 +181,39 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 				}
 				game:GetService("ReplicatedStorage").Functions.SpawnTower:InvokeServer(unpack(Place))
 			end
-			
+
 			wait(0.5)
 			tgS = false
 			Spawns.ImageColor3 = Color3.fromRGB(255, 0,0)
 			s4.Color = Spawns.ImageColor3
 		end
 	end)
-	
+
 	for _, TowerP in pairs(game:GetService("ReplicatedStorage").Towers:GetChildren()) do
 		if TowerP:IsA("Model") then
 			local Tower = Buttons:Clone()
-			Tower.NameTower.Text = TowerP.Name
-			Tower.Image.Image = TowerP:FindFirstChild("Config").Image.Texture
-			Tower.PriceB.Text = TowerP:FindFirstChild("Config").Price.Value
-			Tower.Name = TowerP.Name
-			Tower.Parent = ListTowers
+			if not TowerP:FindFirstChild("Config").Damage then
+				Tower.NameTower.Text = TowerP.Name
+				Tower.Image.Image = TowerP:FindFirstChild("Config").Image.Texture
+				Tower.PriceB.Text = TowerP:FindFirstChild("Config").Price.Value
+				NameB.TextColor3 = Color3.fromRGB(0, 255, 0)
+				Tower.Name = TowerP.Name
+				Tower.Parent = ListTowers
+			else
+				Tower.NameTower.Text = TowerP.Name
+				Tower.Image.Image = TowerP:FindFirstChild("Config").Image.Texture
+				Tower.PriceB.Text = TowerP:FindFirstChild("Config").Price.Value
+				NameB.TextColor3 = Color3.fromRGB(255, 255, 255)
+				Tower.Name = TowerP.Name
+				Tower.Parent = ListTowers
+			end
 			Tower.MouseButton1Click:Connect(function()
 				Selected.Value = Tower.Name
 			end)
 		end
-		
+
 	end
-	
+
 elseif CoreGui:FindFirstChild("DefenseHackTower") then
 	CoreGui:FindFirstChild("DefenseHackTower"):Destroy()
 end
