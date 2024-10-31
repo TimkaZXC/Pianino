@@ -190,6 +190,7 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 			local Tower = Buttons:Clone()
 			Tower.NameTower.Text = TowerP.Name
 			Tower.Name = TowerP.Name
+			Tower.Parent = ListTowers
 			Tower.MouseButton1Click:Connect(function()
 				Selected.Value = Tower.Name
 			end)
