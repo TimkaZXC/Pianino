@@ -99,9 +99,6 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 	title.TextXAlignment = Enum.TextXAlignment.Center
 	local ListTowers = Instance.new("ScrollingFrame")
 	local list = Instance.new("UIListLayout")
-	list.Parent = ListTowers
-	list.Padding = UDim.new(0, 7)
-	list.HorizontalAlignment = Enum.HorizontalAlignment.Center
 	ListTowers.Size = UDim2.new(1, 0, 0.805, 0)
 	ListTowers.Position = UDim2.new(0, 0, 0.195, 0)
 	ListTowers.BackgroundTransparency = 1
@@ -110,6 +107,10 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 	ListTowers.ScrollBarThickness = 0
 	ListTowers.Visible = true
 	ListTowers.Parent = BackGround
+	list.Parent = ListTowers
+	list.Padding = UDim.new(0, 7)
+	list.HorizontalAlignment = Enum.HorizontalAlignment.Center
+	
 	local Toggle = Instance.new("ImageButton")
 	local c3 = UICorner:Clone()
 	local s3 = UIStroke:Clone()
@@ -147,9 +148,9 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 			local Tower = Buttons:Clone()
 			Tower.Parent = ListTowers
 			Tower.NameTower.Text = Towers.Name
-			Tower.Image.Imgae = Towers.Icon.Image
+			Tower.Image.Image = Towers.Icon.Image
 			Tower.MouseButton1Click:Connect(function()
-				Selected.Value = Towers.Name
+				Selected.Value = Tower.Name
 			end)
 		end
 	end
