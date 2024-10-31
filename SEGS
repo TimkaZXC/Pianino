@@ -1,6 +1,6 @@
 -- Meme Tower Defense Hack
 
-local CoreGui = game:GetService("CoreGui")
+local CoreGui = game:GetService("Players").LocalPlayer.PlayerGui
 local Player = game:GetService("Players").LocalPlayer
 local Mouse = Player:GetMouse()
 
@@ -62,7 +62,6 @@ end)
 	NameB.RichText = true
 	NameB.TextXAlignment = Enum.TextXAlignment.Left
 	local PriceB = Instance.new("TextLabel")
-	PriceB.Parent = Buttons
 	PriceB.Position = UDim2.new(0.292, 0, 0, 0)
 	PriceB.Size = UDim2.new(0, 85, 0, 20)
 	PriceB.TextColor3 = Color3.fromRGB(255, 255, 255)
