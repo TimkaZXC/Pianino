@@ -193,7 +193,7 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 		if TowerP:IsA("Model") then
 			local Tower = Buttons:Clone()
 			Tower.NameTower.Text = TowerP.Name
-			Tower.Image.Image = TowerP:FindFirstChild("Config").Image.Image
+			Tower.Image.Image = TowerP:FindFirstChild("Config").Image.Texture
 			Tower.PriceB.Text = TowerP:FindFirstChild("Config").Price.Value
 			Tower.Name = TowerP.Name
 			Tower.Parent = ListTowers
