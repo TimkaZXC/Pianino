@@ -184,9 +184,10 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 	end)
 	
 	for _, Towers in pairs(game.ReplicatedStorage.Towers:GetDescendants()) do
-		if Towers:IsA("Model") then
+		
 			pcall(function()
-				local Tower = Buttons:Clone()
+			if Towers:IsA("Model") then
+			local Tower = Buttons:Clone()
 			Tower.Parent = ListTowers
 			Tower.Name = Towers.Name
 			Tower.NameTower.Text = Towers.Name
@@ -194,9 +195,8 @@ if not CoreGui:FindFirstChild("DefenseHackTower") then
 				Tower.MouseButton1Click:Connect(function()
 					Selected.Value = Tower.NameTower.Text
 				end)
+			end
 			end)
-			
-		end
 	end
 	
 elseif CoreGui:FindFirstChild("DefenseHackTower") then
