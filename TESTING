@@ -1,6 +1,6 @@
 -- Meme Tower Defense Hack
 
-local CoreGui = game:GetService("Players").LocalPlayer.PlayerGui
+local CoreGui = game:GetService("CoreGui")
 local Player = game:GetService("Players").LocalPlayer
 local Mouse = Player:GetMouse()
 
