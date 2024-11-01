@@ -185,7 +185,27 @@ if not CoreGui:FindFirstChild("HitBoxHack") then
 	end)
 
 	Spawns.MouseButton1Click:Connect(function()
-		
+		if tgS == false then
+			tgS = true
+			Spawns.ImageColor3 = Color3.fromRGB(0, 255, 0)
+			s4.Color = Spawns.ImageColor3
+
+			if Selected.Value == ""  or Slot.Value == "" then
+				warn("Change Tower")
+			else
+				local Place = {
+					[1] = "ChangeSlot",
+					[2] = Slot.Value,
+					[3] = Selected.Value,
+				}
+				game:GetService("ReplicatedStorage").Remotes.ConfigureUnits:FireServer(unpack(Place))
+			end
+
+			wait(0.5)
+			tgS = false
+			Spawns.ImageColor3 = Color3.fromRGB(255, 0,0)
+			s4.Color = Spawns.ImageColor3
+		end
 	end)
 	
 	for _, TowerP in pairs(game:GetService("ReplicatedStorage").UnitStats:GetChildren()) do
@@ -201,7 +221,13 @@ if not CoreGui:FindFirstChild("HitBoxHack") then
 				Selected.Value = Tower.Name
 			end)
 		end
-
+	end
+	for _, GetSlot in pairs(Player.PlayerGui.MainUI.Inventory:GetChildren()) do
+		if GetSlot:IsA("TextButton") then
+			GetSlot.MouseButton1Click:Connect(function()
+				Slot.Value = GetSlot.Name
+			end)
+		end
 	end
 	
 elseif CoreGui:FindFirstChild("HitBoxHack") then
