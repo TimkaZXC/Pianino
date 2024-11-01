@@ -103,8 +103,8 @@ if not CoreGui:FindFirstChild("HitBoxHack") then
 	local s2 = UICorner:Clone()
 	c2.Parent = BackGround
 	s2.Parent = BackGround
-	BackGround.Size = UDim2.new(0.136, 0, 0.317, 0)
-	BackGround.Position = UDim2.new(0.857, 0, 0.341, 0)
+	BackGround.Size = UDim2.new(0.787, 0, 0.328, 0)
+	BackGround.Position = UDim2.new(0.204, 0, 0.343, 0)
 	BackGround.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	BackGround.BackgroundTransparency = 0.75
 	BackGround.Visible = true
